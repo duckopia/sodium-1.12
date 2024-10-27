@@ -41,4 +41,9 @@ public class MixinBlockColors implements BlockColorsExtended {
     public IBlockColor getColorProvider(IBlockState state) {
         return this.blocksToColor.get(state.getBlock());
     }
+
+    @Override
+    public boolean hasColorProvider(IBlockState state) {
+        return this.blocksToColor.get(state.getBlock()) != DEFAULT_PROVIDER;
+    }
 }

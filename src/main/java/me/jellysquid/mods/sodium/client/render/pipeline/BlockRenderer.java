@@ -112,7 +112,9 @@ public class BlockRenderer {
             lighter.calculate((ModelQuadView) quad, pos, light, cullFace, quadFace, quad.shouldApplyDiffuseLighting());
 
             if (quad.hasTintIndex() && colorizer == null) {
-                colorizer = this.blockColors.getColorProvider(state);
+                if (this.blockColors.hasColorProvider(state)) {
+                    colorizer = this.blockColors.getColorProvider(state);
+                }
             }
 
             this.renderQuad(world, state, pos, sink, offset, colorizer, quad, light, renderData);
@@ -129,7 +131,7 @@ public class BlockRenderer {
 
         int[] colors = null;
 
-        if (bakedQuad.hasTintIndex()) {
+        if (bakedQuad.hasTintIndex() && colorProvider != null) {
             colors = this.biomeColorBlender.getColors(colorProvider, world, state, pos, src);
         }
 

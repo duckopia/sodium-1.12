@@ -66,6 +66,7 @@ dependencies {
     //implementation rfg.deobf("curse.maven:thermfound-222880:2926428")
     //implementation rfg.deobf("curse.maven:thermdyn-227443:2920505")
     //implementation rfg.deobf("curse.maven:ae2-223794:2747063")
+    //implementation rfg.deobf("curse.maven:ie-231951:2974106")
 }
 
 jar {
